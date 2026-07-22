@@ -17,7 +17,7 @@ URL: https://www.python.org/
 #global prerel ...
 %global upstream_version %{general_version}%{?prerel}
 Version: %{general_version}%{?prerel:~%{prerel}}
-Release:        2.2%{?dist}.3
+Release:        2.4%{?dist}.2
 License: Python
 
 
@@ -483,6 +483,8 @@ Patch478: python3.9-3.9.25-CVE-2026-0672.patch
 Patch479: python3.9-3.9.25-CVE-2026-4786.patch
 # CVE-2026-6100 — upstream backport
 Patch480: python3.9-3.9.25-CVE-2026-6100.patch
+# CVE-2025-6069 — upstream backport
+Patch481: python3.9-3.9.25-CVE-2025-6069.patch
 
 # (New patches go here ^^^)
 #
@@ -1888,6 +1890,9 @@ CheckPython optimized
 # ======================================================
 
 %changelog
+* Thu Jul 16 2026 Jason Rodriguez <jrodriguez@ciq.com> - 3.9.21-2.4.2
+- Fix CVE-2025-6069
+
 * Mon Jul 13 2026 Jason Rodriguez <jrodriguez@ciq.com> - 3.9.21-2.2.3
 - Fix CVE-2026-4786
 - Fix CVE-2026-6100
